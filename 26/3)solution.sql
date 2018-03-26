@@ -1,6 +1,6 @@
 /*
-5. ‚осстановить всю возможную информацию в таблица locations, departments и employees.countries
-- вставка в таблицу locations
+5. Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊ РІСЃСЋ РІРѕР·РјРѕР¶РЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ РІ С‚Р°Р±Р»РёС†Р° locations, departments Рё employees.countries
+- РІСЃС‚Р°РІРєР° РІ С‚Р°Р±Р»РёС†Сѓ locations
 */
 set @id = 0;
 INSERT INTO locations 
@@ -24,7 +24,7 @@ INSERT INTO locations
 select * from `locations`;
 
 /*
-- вставка в таблицу departments
+- РІСЃС‚Р°РІРєР° РІ С‚Р°Р±Р»РёС†Сѓ departments
 */
 set @id=0;
 insert into departments(department_name, location_id)
@@ -35,7 +35,7 @@ r.country_id = l.country_id
 where (department_name is not null);
 
 /*
-- вставка в таблицу employees
+- РІСЃС‚Р°РІРєР° РІ С‚Р°Р±Р»РёС†Сѓ employees
 */
 INSERT INTO employees(
 	first_name,
@@ -58,14 +58,14 @@ select distinct
 	from report;
 	
 /*
- - длЯ каждого работнака исключаЯ менеджеров увеличить зарплату на 100$
+ - РґР»СЏ РєР°Р¶РґРѕРіРѕ СЂР°Р±РѕС‚РЅР°РєР° РёСЃРєР»СЋС‡Р°СЏ РјРµРЅРµРґР¶РµСЂРѕРІ СѓРІРµР»РёС‡РёС‚СЊ Р·Р°СЂРїР»Р°С‚Сѓ РЅР° 100$
 */
 UPDATE `employees`
 SET `salary` = `salary` + 100
 WHERE `job_id` NOT LIKE '%MGR' AND `job_id` NOT LIKE '%MAN';
 
 /*
-- длЯ каждого рабоника установить email = 5 первые буквы имени + 5 первые буквы фамилии
+- РґР»СЏ РєР°Р¶РґРѕРіРѕ СЂР°Р±РѕРЅРёРєР° СѓСЃС‚Р°РЅРѕРІРёС‚СЊ email = 5 РїРµСЂРІС‹Рµ Р±СѓРєРІС‹ РёРјРµРЅРё + 5 РїРµСЂРІС‹Рµ Р±СѓРєРІС‹ С„Р°РјРёР»РёРё
 */
 UPDATE employees
 SET 

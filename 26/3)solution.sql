@@ -1,5 +1,5 @@
 /*
-5. Восстановить всю возможную информацию в таблица locations, departments и employees.countries
+5. Восстановить всю возможную информацию в таблицу locations, departments и employees.countries
 - вставка в таблицу locations
 */
 set @id = 0;
